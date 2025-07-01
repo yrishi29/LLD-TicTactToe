@@ -1,7 +1,7 @@
 package model.Stratergy;
 
 import model.Board.Board;
-import Moves;
+import model.Player.Moves;
 
 import java.util.HashMap;
 import java.util.Map;
