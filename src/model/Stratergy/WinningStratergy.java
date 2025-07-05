@@ -6,7 +6,7 @@ import model.Player.Moves;
 
 public interface WinningStratergy {
 
-    void updateCounter(Moves playerMoves);
+    void updateCounter(Moves playerMoves, Board board);
 
     boolean CheckWinner(Board board, Moves lastMove);
 }

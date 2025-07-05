@@ -49,14 +49,14 @@ public class Game {
             Moves playerMoves = currentPlayer.makeMove(board);
             ++moveCount;
 
-            // Step 1: Update all winning strategies
             for (WinningStratergy winningStratergy : winningStrategies) {
-                winningStratergy.updateCounter(playerMoves);
+                winningStratergy.updateCounter(playerMoves,board);
             }
 
             // Step 2: Check if any strategy declares a winner
             if (checkWinning(playerMoves, board)) {
                 gameStatus = GameStatus.Completed;
+                winner = currentPlayer;
                 break;
             }
 
@@ -76,7 +76,7 @@ public class Game {
             System.out.println("Draw");
         }
         if (gameStatus == GameStatus.Completed) {
-            System.out.println("Winner is " + players.get(currentPlayerIndex).getName());
+            System.out.println("Winner is " + winner.getName());
         }
 
         displayBoard();

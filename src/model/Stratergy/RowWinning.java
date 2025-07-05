@@ -23,7 +23,8 @@ public class RowWinning implements WinningStratergy{
         return false;
     }
 
-    public void updateCounter(Moves move){
+    @Override
+    public void updateCounter(Moves move, Board board){
         Integer currentRow = move.getRow();
         // Initialize playerMap if row doesn't exist
         currentStatusofRow.putIfAbsent(currentRow, new HashMap<>());
